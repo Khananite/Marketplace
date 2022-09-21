@@ -3,7 +3,6 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract Marketplace
 {
-
     event ItemToSell(string _itemName, uint256 _itemPrice);
     event Bought(string _itemName, uint256 _itemPrice);
 
