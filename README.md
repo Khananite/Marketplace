@@ -44,11 +44,11 @@ Emit "ItemToSell" event.
 -Set the exists bool for the item to false (within the "items to sell" array), this way we don't display the item on the front end.
 -Emit "ItemBought" event.
 
-## Additional methods:
+### Additional methods:
 
 I also have additional methods, like a method for returning the items for sale array, which will be displayed on the front end, and mappings can't be returned in solidity.
 
-### Front end:
+## Front end:
 
 The user will be presented with 2 boxes. One for buy and one for sell. But outside the boxes will be a dropdown menu to display the current items for sale.
 
