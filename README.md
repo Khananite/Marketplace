@@ -1,6 +1,6 @@
 # Marketplace
 
-----Problem solving thought process:
+## Problem solving thought process:
 
 I typically solve problems using the divide and conquer approach. So I have a basic front-end and smart contract side.
 
