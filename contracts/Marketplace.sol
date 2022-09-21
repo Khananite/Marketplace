@@ -76,11 +76,6 @@ contract Marketplace
             return false;
     }
 
-    function getItemListCount() public view returns(uint)
-    {
-        return _itemsList.length;
-    }
-
     function getItemsForSaleByIndex() view public returns(_item[] memory)
     {
         _item[] memory itemsList = _itemsList;
