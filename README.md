@@ -13,17 +13,17 @@ Typically, when constructing smart contracts, I follow some guidelines, to help 
 1. Only contain basic functionality - only allow the basic code I want on the blockchain - private and local variables are visible on the blockchain - keep contracts small, modular and easily understandable.
 2. Limit gas use (use local variables to store storage variables for looping) - keeping contract small and simple helps with gas reduction.
 3. If external contracts/libraries are needed, use well tested ones i.e. open zeppelin.
-4. Test code.
+4. Test code (unit testing).
 5. Checks-effects-interactions pattern (help reentrancy attack).
 6. Pull-over-push pattern.
-7. Include a pause in the contract (so if a bug if found in the contract, I can pause the contract and sort the bug out).
+7. Include a pause in the contract (so if a bug is found in the contract, I can pause the contract and sort the bug out).
 8. Proxy contract, which ties in with point number 7.
 
 ### In regards to the interview challenge test:
 
-Looking at the problem to solve, it requires a buy function and sell function. Since only one item of the same name can exist, I need to check in the "sell" function whether the item the user wants to sell already exists. This will be a require check, to ensure we have valid inputs and valid conditions in our contract. I'm also going to be storing the data in a mapping, where item name points to an item struct (which will contain price, index, and a boolean of whether the item exists).
+Looking at the problem to solve, it requires a buy function and a sell function. Since only one item of the same name can exist, I need to check in the "sell" function whether the item the user wants to sell already exists. This will be a require check, to ensure we have valid inputs and valid conditions in our contract. I'm also going to be storing the data in a mapping, where item name points to an item struct (which will contain price, index, and a boolean of whether the item exists).
 
-I also will have an array, which will simply store the item struct, and this will be used on the front end to display the current items for sale.
+I also will have an array, which will simply store the item struct, and this will be used on the front end to display the current items for sale, as solidity doesn't allow for a mapping to be returned in a method.
 
 I will also have 2 events, one for when an item is added to the "sell" method, and one for when an item is "bought".
 
@@ -31,9 +31,9 @@ I will also have 2 events, one for when an item is added to the "sell" method, a
 
 ### itemsForSale function:
 
-Check if sell item's name already exists.
-Add item name, user name, item price to "items to sell" mapping and array.
-Emit "ItemToSell" event.
+-Check if sell item's name already exists.
+-Add item name, user name, item price to "items to sell" mapping and array.
+-Emit "ItemToSell" event.
 
 
 ### buyItem function:
@@ -46,13 +46,13 @@ Emit "ItemToSell" event.
 
 ### Additional methods:
 
-I also have additional methods, like a method for returning the items for sale array, which will be displayed on the front end, and mappings can't be returned in solidity.
+I will also have additional methods, like a method for returning the "items for sale" array, which will be displayed on the front end, and mappings can't be returned in solidity.
 
 ## Front end:
 
-The user will be presented with 2 boxes. One for buy and one for sell. But outside the boxes will be a dropdown menu to display the current items for sale.
+The front end will be pretty basic. I will have a button to allow users to connect to metamask, and once connected, display their current address.
+I will also use a dropdown to display the current items for sale. Dropdowns are simple structures, and takes care of the basic need of displaying the items.
 
-Since this is a basic implementation, on the front end, whether it's the buy or sell box, I'll have the user enter their name, item name, and the price and a button ("Buy", "Sell")
 
 
 -----Tests:
