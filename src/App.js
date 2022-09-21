@@ -5,7 +5,7 @@ import contractAbi from './abi/abiMarketplace.json';
 var Web3 = require('web3');
 var web3 = new Web3(Web3.givenProvider);
 
-const contractAddress = "0xc419E217F1DB559DA1d1Fd14CeABc59e8A3b8546";
+const contractAddress = "0x6047dA2e1EbC389fa0513BaEde66BBA4ddA451A4";
 const abi = contractAbi.marketplaceAbi;
 
 function App() {
