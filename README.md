@@ -8,7 +8,7 @@ I start off with the smart contract first.
 
 ### Smart contract:
 
-**Language used: Solidity.
+**Language used: Solidity.**
 
 Typically, when constructing smart contracts, I follow some guidelines, to help reduce gas cost, and help with potential hacks. For example:
 
@@ -29,7 +29,7 @@ I also will have an array, which will simply store the item struct, and this wil
 
 I will also have 2 events, one for when an item is added to the "sell" method, and one for when an item is "bought".
 
-**Below is the outline of my 2 methods (one for selling items, and one for buying items):
+**Below is the outline of my 2 methods (one for selling items, and one for buying items):**
 
 ### itemsForSale function:
 
@@ -51,7 +51,7 @@ I will also have additional methods, like a method for returning the "items for 
 
 ## Front-end:
 
-**Languages and tech used: React, web3.
+**Languages and tech used: React, web3.**
 
 I will use web3 to connect with metamask, initialise my smart contract, and interact with it.
 
