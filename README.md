@@ -8,6 +8,8 @@ I start off with the smart contract first.
 
 ### Smart contract:
 
+**Language used: Solidity.
+
 Typically, when constructing smart contracts, I follow some guidelines, to help reduce gas cost, and help with potential hacks. For example:
 
 1. Only contain basic functionality - only allow the basic code I want on the blockchain - private and local variables are visible on the blockchain - keep contracts small, modular and easily understandable.
@@ -35,7 +37,6 @@ I will also have 2 events, one for when an item is added to the "sell" method, a
 -Add item name, user name, item price to "items to sell" mapping and array.
 -Emit "ItemToSell" event.
 
-
 ### buyItem function:
 
 -Check if item name exists.
@@ -48,13 +49,21 @@ I will also have 2 events, one for when an item is added to the "sell" method, a
 
 I will also have additional methods, like a method for returning the "items for sale" array, which will be displayed on the front end, and mappings can't be returned in solidity.
 
-## Front end:
+## Front-end:
 
-The front end will be pretty basic. I will have a button to allow users to connect to metamask, and once connected, display their current address.
-I will also use a dropdown to display the current items for sale. Dropdowns are simple structures, and takes care of the basic need of displaying the items.
-Additionally, I will have 2 input boxes, one for item name, and one for item price, and then 2 buttons ("Sell", "Buy").
+**Languages and tech used: React, web3.
 
+I will use web3 to connect with metamask, initialise my smart contract, and interact with it.
 
+The front-end will be pretty basic. I will have a button to allow users to connect to metamask, and once connected, display their current address. I will use metamask for dealing with gas and transaction fees and it will be connected to the local blockchain, ganache.
+
+I will also use a dropdown to display the current items for sale. Dropdowns are simple structures, and takes care of the basic need of displaying the items for sale.
+
+Additionally, I will have 2 input boxes, one for item name, and one for item price, and then 2 buttons ("Sell", "Buy"). The buttons will contain onclick methods to direct the data entered to specific methods that deal with "Selling" items, and "Buying" items. So, if the user clicks the "Sell" button, then the entered data will be directed to a method, which will call the smart contract method that deals with selling items (i.e. itemsForSale).
+
+If user clicks the "Buy" button, the smart contract method named "buyItem" will be called, and the item will be removed (as long as the item exists) and it will be removed from the dropdown list. If the user clicks "Sell" button, then the item will be added to the dropdown menu (as long as the item doesn't exist).
+
+Howeever, I will also do valid input checks. Make sure the user enters valid inputs like a non-negative and non-empty number, and a non-empty value for the item name.
 
 ### Tests:
 
@@ -64,10 +73,9 @@ I will also take advantage of creating tests, to test the behaviour of each func
 
 Add balances for users, so if users run out of balance, they can't buy items.
 
-
 ### Additional:
 
-Used truffle suite (ganache (as a local blockchain), truffle for unit testing and deploying smart contract)
+Will use truffle suite (ganache (as a local blockchain), truffle for unit testing and deploying smart contract)
 
 ## Available Scripts
 
