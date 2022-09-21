@@ -38,8 +38,8 @@ I will also have 2 events, one for when an item is added to the "sell" method, a
 
 ### buyItem function:
 
--Check if item name exists
--Check if price matches (user's price they've entered and actual price of item)
+-Check if item name exists.
+-Check if price entered matches or is greater than the asking price of the item for sale.
 -Remove the bought item (user's name, item name, item price) from the "items to sell" mapping.
 -Set the exists bool for the item to false (within the "items to sell" array), this way we don't display the item on the front end.
 -Emit "ItemBought" event.
@@ -52,16 +52,17 @@ I will also have additional methods, like a method for returning the "items for 
 
 The front end will be pretty basic. I will have a button to allow users to connect to metamask, and once connected, display their current address.
 I will also use a dropdown to display the current items for sale. Dropdowns are simple structures, and takes care of the basic need of displaying the items.
+Additionally, I will have 2 input boxes, one for item name, and one for item price, and then 2 buttons ("Sell", "Buy").
 
 
 
------Tests:
+### Tests:
 
-I will also take advantage of creating tests, to test the behaviour of each function, and make sure functionality works properly.
+I will also take advantage of creating tests, to test the behaviour of each function, and make sure functionality works properly. Test functionality like: can user add a new and unique item for sale, can user buy an existing item, etc.
 
-----Future improvements:
+### Future improvements:
 
-Add balance for users, so if users run out of balance, they can't buy items.
+Add balances for users, so if users run out of balance, they can't buy items.
 
 
 ### Additional:
@@ -69,6 +70,8 @@ Add balance for users, so if users run out of balance, they can't buy items.
 Used truffle suite (ganache (as a local blockchain), truffle for unit testing and deploying smart contract)
 
 ## Available Scripts
+
+Make sure to install any dependencies.
 
 In the project directory, you can run:
 
