@@ -46,12 +46,6 @@ Emit "ItemToSell" event.
 
 I also have additional methods, like a method for returning the items for sale array, which will be displayed on the front end, and mappings can't be returned in solidity.
 
-
-Return the items list: https://stackoverflow.com/questions/37606839/how-to-return-mapping-list-in-solidity-ethereum-contract
-
-Find whether bulk access array in solidity is better and faster for gas/performance (i.e. return the whole array) or if it's better to return one item at a time - I can test this on remix.
-
-
 ----Front end:
 
 The user will be presented with 2 boxes. One for buy and one for sell. But outside the boxes will be a dropdown menu to display the current items for sale.
@@ -61,16 +55,14 @@ Since this is a basic implementation, on the front end, whether it's the buy or 
 
 -----Tests:
 
-I also took advantage of creating tests, to test the behaviour of each function.
-
-
+I will also take advantage of creating tests, to test the behaviour of each function, and make sure functionality works properly.
 
 ----Future improvements:
 
-Add balance for users.
+Add balance for users, so if users run out of balance, they can't buy items.
 
 
-########Additional:
+### Additional:
 
 Used truffle suite (ganache (as a local blockchain), truffle for unit testing and deploying smart contract)
 
