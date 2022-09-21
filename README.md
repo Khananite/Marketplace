@@ -1,34 +1,30 @@
 # Marketplace
 
-
-
-Only contain basic functionality - only allow the basic code I want on the blockchain - private and local variables are visible on the blockchain - keep contracts small, modular and easily understandable.
-2. Limit gas use (use local variables to store storage variables for looping) - keeping contract small and simple helps with gas reduction.
-3. If external contracts/libraries are needed, use well tested ones i.e. open zeppelin.
-4. Test code.
-5. Checks-effects-interactions pattern (help reentrancy attack).
-6. Pull-over-push pattern.
-7. Include a pause in the contract.
-
-
-
 ----Problem solving thought process:
 
 I typically solve problems using the divide and conquer approach. So I have a basic front-end and smart contract side.
 
 I start off with the smart contract first.
 
-Looking at the problem to solve, it requires a buy function and sell function. Since only one item of the same name can exist, I need to check in the "sell" function whether the item the user wants to sell already exists. This will be a require check, to ensure we have valid inputs and valid conditions in our contract. I'm also going to be storing the data will be stored in a mapping, where item name ponits to item price.
+Typically, when constructing smart contracts, I follow some guidelines, to help reduce gas cost, and help with potential hacks. For example:
 
-And there will be one mapping storing the items to sell (item name, and price), and an array of items to sell (which is used on the front end to display the items to sell).
+1. Only contain basic functionality - only allow the basic code I want on the blockchain - private and local variables are visible on the blockchain - keep contracts small, modular and easily understandable.
+2. Limit gas use (use local variables to store storage variables for looping) - keeping contract small and simple helps with gas reduction.
+3. If external contracts/libraries are needed, use well tested ones i.e. open zeppelin.
+4. Test code.
+5. Checks-effects-interactions pattern (help reentrancy attack).
+6. Pull-over-push pattern.
+7. Include a pause in the contract (so if a bug if found in the contract, I can pause the contract and sort the bug out).
+8. Proxy contract, which ties in with point number 7.
 
+---------In regards to the interview challenge test:
 
-Mappings:
+Looking at the problem to solve, it requires a buy function and sell function. Since only one item of the same name can exist, I need to check in the "sell" function whether the item the user wants to sell already exists. This will be a require check, to ensure we have valid inputs and valid conditions in our contract. I'm also going to be storing the data in a mapping, where item name points to an item struct (which will contain price, index, and a boolean of whether the item exists).
 
-1. "Items to sell": mapping (string (item name) => uint (price)))
+I also will have an array, which will simply store the item struct, and this will be used on the front end to display the current items for sale.
 
+I will also have 2 events, one for when an item is added to the "sell" method, and one for when an item is "bought".
 
-I always consider the reentrancy attack when constructing methods/smart contracts. I typically use checks-effects-interactions pattern.
 
 -----itemsForSale function:
 
