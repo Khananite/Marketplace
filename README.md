@@ -27,7 +27,7 @@ I also will have an array, which will simply store the item struct, and this wil
 
 I will also have 2 events, one for when an item is added to the "sell" method, and one for when an item is "bought".
 
-#Below is the outline of my 2 methods (one for selling items, and one for buying items):
+**Below is the outline of my 2 methods (one for selling items, and one for buying items):
 
 ### itemsForSale function:
 
