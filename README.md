@@ -76,7 +76,7 @@ Howeever, I will also do valid input checks. Make sure the user enters valid inp
 
 ### Tests:
 
-I will also take advantage of creating tests, to test the behaviour of each function, and make sure functionality works properly. Test functionality like: can user add a new and unique item for sale, can user buy an existing item, etc.
+I will also take advantage of creating tests, to test the behaviour of each function, and make sure functionality works correctly. Test functionality like: can user add a new and unique item for sale, can user buy an existing item, etc.
 
 ### Future improvements:
 
