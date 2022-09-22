@@ -84,7 +84,7 @@ Add balances for users, so if users run out of balance, they can't buy items.
 
 ### Additional:
 
-Will use truffle suite (ganache (as a local blockchain), truffle for unit testing and deploying smart contract)
+I will use the truffle suite (ganache (as a local blockchain), truffle for unit testing and deploying the smart contract locally)
 
 ## Available Scripts
 
