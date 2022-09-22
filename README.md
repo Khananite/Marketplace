@@ -23,9 +23,18 @@ Typically, when constructing smart contracts, I follow some guidelines, to help 
 
 ### In regards to the interview challenge test:
 
-Looking at the problem to solve, it requires a buy function and a sell function. Since only one item of the same name can exist, I need to check in the "sell" function whether the item the user wants to sell already exists. This will be a require check, to ensure we have valid inputs and valid conditions in our contract. I'm also going to be storing the data in a mapping, where item name points to an item struct (which will contain price, index, and a boolean of whether the item exists).
+Looking at the problem to solve, it requires a buy function and a sell function. Since only one item of the same name can exist, I need to check in the "sell" function whether the item the user wants to sell already exists. This will be a require check, to ensure we have valid inputs and valid conditions in our contract. I'm also going to be storing the data in a mapping, where item name points to an item struct (which will contain price, index, and a boolean of whether the item exists). A mapping is a good choice because it will allow me to quickly find the item's price, etc, based on the item's name, so a Key value pair.
 
-I also will have an array, which will simply store the item struct, and this will be used on the front end to display the current items for sale, as solidity doesn't allow for a mapping to be returned in a method.
+I also will have an array, which will simply store the item struct, and this will be used on the front end to display the current items for sale, as solidity doesn't allow for a mapping to be returned in a method, and solidity doesn't allow mappings to be looped over.
+
+However, removing elements/items (when an item is bought) from the array will be tricky. Because I can remove the item from the mapping based on the "key", however it will be difficult to remove it from the array, as it's based on an index. So within the item struct I will also store the index. This index will be retrieved from the mapping based on the item name key, and will be used on the array to set the item struct's boolean (boolean itemExists) to false. I won't remove the item from the array as this will ruin the ordering of the array and the index solution.
+
+It will ruin it because if I remove index 4 from the array, all the items will shift to the left, so next time if I remove index 5, it will be removing the incorrect element/item from the array.
+
+**So the 2 data structures that will be used:**
+
+1. Mapping: item name => item struct (price, index, boolean itemExists)
+2. Array of item struct
 
 I will also have 2 events, one for when an item is added to the "sell" method, and one for when an item is "bought".
 
@@ -47,7 +56,7 @@ I will also have 2 events, one for when an item is added to the "sell" method, a
 
 ### Additional methods:
 
-I will also have additional methods, like a method for returning the "items for sale" array, which will be displayed on the front end, and mappings can't be returned in solidity.
+I will also have additional methods, like a method for returning the "items for sale" array, which will be displayed on the front end, and mappings can't be returned in solidity, and can't be looped over.
 
 ## Front-end:
 
