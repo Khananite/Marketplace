@@ -60,9 +60,9 @@ I will also have additional methods, like a method for returning the "items for 
 
 ## Front-end:
 
-**Languages and tech used: React, web3.**
+**Languages and tech used: React, web3.js.**
 
-I will use web3 to connect with metamask, initialise my smart contract, and interact with it.
+I will use web3.js to connect with metamask, initialise my smart contract, and interact with it.
 
 The front-end will be pretty basic. I will have a button to allow users to connect to metamask, and once connected, display their current address. I will use metamask for dealing with gas and transaction fees and it will be connected to the local blockchain, ganache.
 
