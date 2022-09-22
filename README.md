@@ -42,17 +42,17 @@ I will also have 2 events, one for when an item is added to the "sell" method, a
 
 ### itemsForSale function:
 
--Check if sell item's name already exists.
--Add item name, user name, item price to "items to sell" mapping and array.
--Emit "ItemToSell" event.
+1. Check if sell item's name already exists.
+2. Add item name, user name, item price to "items to sell" mapping and array.
+3. Emit "ItemToSell" event.
 
 ### buyItem function:
 
--Check if item name exists.
--Check if price entered matches or is greater than the asking price of the item for sale.
--Remove the bought item (user's name, item name, item price) from the "items to sell" mapping.
--Set the exists bool for the item to false (within the "items to sell" array), this way we don't display the item on the front end.
--Emit "ItemBought" event.
+1. Check if item name exists.
+2. Check if price entered matches or is greater than the asking price of the item for sale.
+3. Remove the bought item (user's name, item name, item price) from the "items to sell" mapping.
+4. Set the exists bool for the item to false (within the "items to sell" array), this way we don't display the item on the front end.
+5. Emit "ItemBought" event.
 
 ### Additional methods:
 
