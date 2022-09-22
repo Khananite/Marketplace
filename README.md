@@ -56,7 +56,7 @@ I will also have 2 events, one for when an item is added to the "sell" method, a
 
 ### Additional methods:
 
-I will also have additional methods, like a method for returning the "items for sale" array, which will be displayed on the front end, and mappings can't be returned in solidity, and can't be looped over.
+I will also have additional methods, like a method for returning the "items for sale" array, which will be displayed on the front end, since mappings can't be returned in solidity, and can't be looped over.
 
 ## Front-end:
 
